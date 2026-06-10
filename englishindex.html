@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Ruiz | Java Full Stack Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarMain" data-bs-offset="70">
+
+    <nav id="navbarMain" class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#hero" aria-label="Go to home">Bruno<span class="text-purple">Ruiz</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Open navigation menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown me-lg-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="temaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Select visual theme">
+                            <i class="bi bi-palette-fill me-1" aria-hidden="true"></i>Theme
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="temaDropdown">
+                            <li><button class="dropdown-item" onclick="cambiarTema('oscuro')"><i class="bi bi-moon-fill me-2" aria-hidden="true"></i>Dark</button></li>
+                            <li><button class="dropdown-item" onclick="cambiarTema('claro')"><i class="bi bi-sun-fill me-2" aria-hidden="true"></i>Light</button></li>
+                            <li><button class="dropdown-item" onclick="cambiarTema('mezcla')"><i class="bi bi-circle-half me-2" aria-hidden="true"></i>Mixed</button></li>
+                            <li><button class="dropdown-item" onclick="cambiarTema('invertido')"><i class="bi bi-code-slash me-2" aria-hidden="true"></i>Inverted</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class='nav-link' href='/index.html' aria-label="View Spanish version">Español</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-mi">Profile & Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cv">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portafolio">Portfolio</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="#contacto" class="btn btn-contacto-nav btn-sm rounded-pill px-4 py-2" aria-label="Go to contact section">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section d-flex align-items-center min-vh-100 pt-5">
+        <div class="container">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                <div class="col-lg-5 text-center text-lg-start mt-5 mt-lg-0" data-aos="fade-right">
+                    <div class="position-relative d-inline-block">
+                        <div class="bg-purple position-absolute top-0 start-0 w-100 h-100 rounded-4 ms-3 mt-3 opacity-50" style="background-color: var(--color-primario);" aria-hidden="true"></div>
+                        <img src="./foto de perfil.jpeg" alt="Portrait of Bruno Ruiz, Full Stack Developer" class="img-fluid rounded-4 position-relative shadow-lg border border-2" style="max-width: 85%; border-color: var(--color-primario);">
+                    </div>
+                </div>
+                
+                <div class="col-lg-7 ps-lg-5 text-center text-lg-start" data-aos="fade-left">
+                    <span class="fw-bold tracking-wide text-uppercase mb-2 d-block" style="color: var(--color-primario);">Jr. Java Full Stack Developer</span>
+                    <h1 class="display-3 fw-bold mb-3">Hi, I'm <br><span class="text-purple" style="color: var(--color-primario) !important;">Bruno Ruiz</span></h1>
+                    <h2 class="h4 mb-4 fw-light" style="min-height: 35px; color: var(--color-primario);" aria-live="polite">
+                        <span id="typewriter"></span>
+                    </h2>
+                    <p class="lead mb-4 text-secondary">I analyze, build, and optimize solutions based on solid logic and clean code. I transform complex problems into scalable architectures.</p>
+                    
+                    <div class="d-flex flex-wrap gap-3 mb-4 justify-content-center justify-content-lg-start">
+                        <button type="button" class="btn btn-purple px-4 py-2" data-bs-toggle="modal" data-bs-target="#cvModal" style="background-color: var(--color-primario); color: white; border: none;">
+                            <i class="bi bi-file-earmark-text me-2" aria-hidden="true"></i>View my Resume
+                        </button>
+                        <a href="https://wa.me/528180548758" target="_blank" class="btn btn-outline-light px-4 py-2 contactame" aria-label="Contact via WhatsApp">
+                            <i class="bi bi-whatsapp me-2" aria-hidden="true"></i>WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="elementos fs-4 d-flex gap-4 justify-content-center justify-content-lg-start mt-4">
+                        <a href="https://github.com/BrunoRuiz777" target="_blank" class="text-decoration-none" style="color: var(--color-primario);" aria-label="Visit my GitHub profile">
+                            <i class="bi bi-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/brunoalbertoruizcastillo/" target="_blank" class="text-decoration-none" style="color: var(--color-primario);" aria-label="Visit my LinkedIn profile">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@albertodevsmusic" target="_blank" class="text-decoration-none" style="color: var(--color-primario);" aria-label="Visit my YouTube channel Alberto Devs Music">
+                            <i class="bi bi-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Bruno.alberto.ruiz.castillo.dev/" target="_blank" class="text-decoration-none" style="color: var(--color-primario);" aria-label="Visit my Facebook profile">
+                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-5 bg-dark-alt">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h2 class="display-6 fw-bold mb-3">Get to know my <span style="color: var(--color-primario);">profile</span></h2>
+                    <div class="purple-line mb-4" style="margin-left: 0; background-color: var(--color-primario);" aria-hidden="true"></div>
+                    <p>I come from a technical background in telecommunications, which forged my deep analytical capacity to find the root cause of problems. I don't do "vibe coding"; I understand the logic behind every line I program.</p>
+                </div>
+                
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="card bg-card border-0 shadow-sm mb-4 p-2">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3" style="color: var(--color-primario);"><i class="bi bi-bullseye me-2" aria-hidden="true"></i>Methodology & Goals</h3>
+                            <p class="mb-0">I work structuring code in a modular and scalable way under agile methodologies (SCRUM). I execute complex operations, integrate AI APIs, and develop normalized databases. My goal is to join an innovative team where I can add immediate value.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="h6 text-uppercase mb-3 mt-4" style="color: var(--color-secundario);">Tech Stack</h4>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 text-center h-100 bg-card" style="border-color: rgba(255,255,255,0.1) !important;">
+                                <i class="bi bi-server mb-2 fs-3" style="color: var(--color-primario);" aria-hidden="true"></i>
+                                <h5 class="h6">Back-end & DB</h5>
+                                <p class="small mb-0 opacity-75">Java, Spring Boot, Hibernate, Python, FastAPI, MySQL, H2.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 text-center h-100 bg-card" style="border-color: rgba(255,255,255,0.1) !important;">
+                                <i class="bi bi-window-sidebar mb-2 fs-3" style="color: var(--color-primario);" aria-hidden="true"></i>
+                                <h5 class="h6">Front-end</h5>
+                                <p class="small mb-0 opacity-75">HTML5, CSS3, JavaScript, Bootstrap 5, Vite.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 text-center h-100 bg-card" style="border-color: rgba(255,255,255,0.1) !important;">
+                                <i class="bi bi-people mb-2 fs-3" style="color: var(--color-primario);" aria-hidden="true"></i>
+                                <h5 class="h6">Soft Skills</h5>
+                                <p class="small mb-0 opacity-75">Programming logic, Prompt Engineering, Active listening.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title text-start">My Resume</h2>
+                    <div class="purple-line mb-3" style="margin-left: 0; background-color: var(--color-primario);" aria-hidden="true"></div>
+                    <p>Problem-solving, continuous learning, and hands-on development. My technical experience and analytical skills have allowed me to build a solid foundation in programming, complemented by comprehensive projects and constant training.</p>
+                    <button type="button" class="btn btn-purple mt-3" data-bs-toggle="modal" data-bs-target="#cvModal" style="background-color: var(--color-primario); color: white; border: none;" aria-label="Open Curriculum Vitae preview">
+                        <i class="bi bi-file-earmark-arrow-down me-2" aria-hidden="true"></i>View Resume
+                    </button>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="bg-card p-4 rounded mt-3 shadow-sm border" style="border-color: rgba(255,255,255,0.1) !important;">
+                        <h4 class="mb-4">Outstanding Education</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--color-primario);" aria-hidden="true"></i>Jr. Java Full Stack Developer Bootcamp - Generation MX</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--color-primario);" aria-hidden="true"></i>Java Certifications (I, II and Fundamentals) - Accenture</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--color-primario);" aria-hidden="true"></i>Cybersecurity Fundamentals I and II - Accenture</li>
+                            <li><i class="bi bi-check-circle-fill me-2" style="color: var(--color-primario);" aria-hidden="true"></i>Project Management & Agile Methodologies - Santander Open Academy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portafolio" class="py-5 bg-dark-alt">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Portfolio</h2>
+                <div class="purple-line mx-auto" style="background-color: var(--color-primario);" aria-hidden="true"></div>
+                <p class="mt-3 opacity-75">Real systems, clean code, and functional solutions.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    
+                    <article class="card bg-card border-0 shadow-sm mb-4 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4 text-center p-5" style="background-color: rgba(0,0,0,0.2);" aria-hidden="true">
+                                <i class="bi bi-box-seam display-1" style="color: var(--color-primario);"></i>
+                            </div>
+                            <div class="col-md-8 p-4 p-lg-5">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h4 fw-bold">Total Messaging</h3>
+                                    <span class="badge bg-success text-dark" aria-label="Project status: 80% completed">80% Completed</span>
+                                </div>
+                                <p class="small fw-bold font-monospace mb-3" style="color: var(--color-primario);">HTML5 | CSS3 | JS | Bootstrap 5 | Vite</p>
+                                <p class="opacity-75">Responsive digital platform for a messaging/courier company that conveys trust and professionalism. It stands out for its modular interface, facilitating the presentation of services, shipping quotes, and direct contact with the client through an agile visual design.</p>
+                                <a href="#" target="_blank" class="text-decoration-none mt-2 d-inline-block" style="color: var(--color-primario);" aria-label="View Total Messaging Project, coming soon">
+                                    <i class="bi bi-clock-history me-1" aria-hidden="true"></i> Project coming soon
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card bg-card border-0 shadow-sm mb-4 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="row g-0 align-items-center flex-md-row-reverse">
+                            <div class="col-md-4 text-center p-5" style="background-color: rgba(0,0,0,0.2);" aria-hidden="true">
+                                <i class="bi bi-headset display-1" style="color: var(--color-primario);"></i>
+                            </div>
+                            <div class="col-md-8 p-4 p-lg-5">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h4 fw-bold">AI Call Simulator</h3>
+                                    <span class="badge bg-success text-dark" aria-label="Project status: 100% completed">100% Completed</span>
+                                </div>
+                                <p class="small fw-bold font-monospace mb-3" style="color: var(--color-primario);">Python | FastAPI | WebSockets | LLaMA 3.3</p>
+                                <p class="opacity-75">Interactive real-time web platform for telecommunications agent training. It generates dynamic scenarios processing voice-to-text and text-to-voice without latency, automatically evaluating quality metrics with advanced prompt engineering.</p>
+                                <p class="visually-hidden">Accessibility note: The demonstration video contains descriptive subtitles for people with hearing impairments.</p>
+                                <button type="button" class="btn btn-link p-0 text-decoration-none mt-2" data-bs-toggle="modal" data-bs-target="#videoModalLlamadas" style="color: var(--color-primario);" aria-label="Watch video demo of the AI Call Simulator">
+                                    <i class="bi bi-play-circle-fill me-1" aria-hidden="true"></i> Watch video demo
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card bg-card border-0 shadow-sm mb-4 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4 text-center p-5" style="background-color: rgba(0,0,0,0.2);" aria-hidden="true">
+                                <i class="bi bi-people-fill display-1" style="color: var(--color-primario);"></i>
+                            </div>
+                            <div class="col-md-8 p-4 p-lg-5">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h4 fw-bold">Employee Management</h3>
+                                    <span class="badge bg-success text-dark" aria-label="Project status: 100% completed">100% Completed</span>
+                                </div>
+                                <p class="small fw-bold font-monospace mb-3" style="color: var(--color-primario);">Java | Spring Boot 3 | MySQL | Hibernate</p>
+                                <p class="opacity-75">Fullstack application (MVC) with session control and advanced relational database design. Implements inheritance and polymorphism with JPA to handle corporate hierarchies and real-time CRUD operations.</p>
+                                <button type="button" class="btn btn-link p-0 text-decoration-none mt-2" data-bs-toggle="modal" data-bs-target="#videoModalEmpleados" style="color: var(--color-primario);" aria-label="Watch video demo of the Employee Management system">
+                                    <i class="bi bi-play-circle-fill me-1" aria-hidden="true"></i> Watch video demo
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card bg-card border-0 shadow-sm mb-4 overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                        <div class="row g-0 align-items-center flex-md-row-reverse">
+                            <div class="col-md-4 text-center p-5" style="background-color: rgba(0,0,0,0.2);" aria-hidden="true">
+                                <i class="bi bi-boxes display-1" style="color: var(--color-primario);"></i>
+                            </div>
+                            <div class="col-md-8 p-4 p-lg-5">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h4 fw-bold">Inventory Management</h3>
+                                    <span class="badge bg-success text-dark" aria-label="Project status: 100% completed">100% Completed</span>
+                                </div>
+                                <p class="small fw-bold font-monospace mb-3" style="color: var(--color-primario);">Java 17 | Spring Boot | Spring Data JPA | H2</p>
+                                <p class="opacity-75">Web system to register and manage products using an embedded database. Applies MVC architecture, business rule validation, OOP principles, and dynamic view rendering with Thymeleaf.</p>
+                                <button type="button" class="btn btn-link p-0 text-decoration-none mt-2" data-bs-toggle="modal" data-bs-target="#videoModalInventarios" style="color: var(--color-primario);" aria-label="Watch video demo of the Inventory Management system">
+                                    <i class="bi bi-play-circle-fill me-1" aria-hidden="true"></i> Watch video demo
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card bg-card border-0 shadow-sm mb-4 overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4 text-center p-5" style="background-color: rgba(0,0,0,0.2);" aria-hidden="true">
+                                <i class="bi bi-cart-check-fill display-1" style="color: var(--color-primario);"></i>
+                            </div>
+                            <div class="col-md-8 p-4 p-lg-5">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="h4 fw-bold">JavaSport (E-commerce)</h3>
+                                    <span class="badge bg-success text-dark" aria-label="Project status: 100% completed">100% Completed</span>
+                                </div>
+                                <p class="small fw-bold font-monospace mb-3" style="color: var(--color-primario);">HTML5 | CSS3 | Bootstrap 5 | JS (ES6+)</p>
+                                <p class="opacity-75">Web application with a dynamic catalog and shopping cart. Includes data persistence via LocalStorage, automatic subtotal updates, client-side validation, and a responsive modular design.</p>
+                                <button type="button" class="btn btn-link p-0 text-decoration-none mt-2" data-bs-toggle="modal" data-bs-target="#videoModalJavasport" style="color: var(--color-primario);" aria-label="Watch video demo of the JavaSport platform">
+                                    <i class="bi bi-play-circle-fill me-1" aria-hidden="true"></i> Watch video demo
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="purple-line mx-auto" style="background-color: var(--color-primario);" aria-hidden="true"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6" data-aos="zoom-in">
+                    <div class="bg-card p-5 rounded-4 shadow-sm border h-100" style="border-color: rgba(255,255,255,0.1) !important;">
+                        <h3 class="h4 mb-4"><i class="bi bi-chat-dots-fill me-2" style="color: var(--color-primario);" aria-hidden="true"></i>Let's connect!</h3>
+                        <address>
+                            <ul class="list-unstyled fs-5">
+                                <li class="mb-3"><i class="bi bi-envelope-fill me-3" style="color: var(--color-primario);" aria-hidden="true"></i><a href="mailto:Ruizcastillobruno@gmail.com" class="text-decoration-none text-reset text-hover-purple" aria-label="Send email to Ruizcastillobruno@gmail.com">Ruizcastillobruno@gmail.com</a></li>
+                                <li class="mb-3"><i class="bi bi-whatsapp me-3" style="color: var(--color-primario);" aria-hidden="true"></i> <a href="https://wa.me/528180548758" target="_blank" class="text-decoration-none text-reset text-hover-purple" aria-label="Contact via WhatsApp number +52 81 8054 8758">+52 81 8054 8758</a></li>
+                                <li class="mb-3"><i class="bi bi-linkedin me-3" style="color: var(--color-primario);" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/brunoalbertoruizcastillo/" target="_blank" class="text-decoration-none text-reset text-hover-purple" aria-label="Visit Bruno Alberto Ruiz Castillo's LinkedIn profile">Bruno Alberto Ruiz Castillo</a></li>
+                                <li class="mb-3"><i class="bi bi-github me-3" style="color: var(--color-primario);" aria-hidden="true"></i> <a href="https://github.com/BrunoRuiz777" target="_blank" class="text-decoration-none text-reset text-hover-purple" aria-label="Visit BrunoRuiz777's GitHub repository">BrunoRuiz777</a></li>
+                            </ul>
+                        </address>
+                        <div class="mt-4 pt-3 border-top" style="border-color: rgba(255,255,255,0.1) !important;">
+                            <h4 class="h6 mb-2">Current availability:</h4>
+                            <span class="badge bg-success fs-6 fw-normal px-3 py-2">Open to work</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center border-top bg-dark-alt" style="border-color: rgba(255,255,255,0.1) !important;">
+        <div class="container">
+            <p class="mb-1 opacity-75">&copy; 2026 Bruno Ruiz - Junior Java Full Stack Developer</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cvModalLabel">My Resume</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close resume window"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe src="./CV_Bruno_Ruiz.pdf" style="width:100%; height:70vh;" frameborder="0" title="PDF document preview of my Resume"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a href="./CV_Bruno_Ruiz.pdf" download="CV_Bruno_Ruiz.pdf" class="btn btn-primary" aria-label="Download my Resume in PDF format">Download</a>
+                    <a href="./CV_Bruno_Ruiz.pdf" target="_blank" class="btn btn-purple" style="background-color: var(--color-primario); color: white; border: none;" aria-label="Open my Resume in a new browser tab">Open in new tab</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModalLlamadas" tabindex="-1" aria-labelledby="videoModalLlamadasLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLlamadasLabel">Demo: AI Call Simulator</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close video"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9" style="border-radius: 0 0 1.5rem 1.5rem; overflow: hidden;">
+                        <iframe src="https://www.youtube.com/embed/9EHJ8ug1qi8" title="YouTube video player showing the demonstration of the AI Call Simulator" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModalEmpleados" tabindex="-1" aria-labelledby="videoModalEmpleadosLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalEmpleadosLabel">Demo: Employee Management</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close video"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9" style="border-radius: 0 0 1.5rem 1.5rem; overflow: hidden;">
+                        <iframe src="https://www.youtube.com/embed/-wb728CsWTc" title="YouTube video player showing the demonstration of the Employee Management system" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModalInventarios" tabindex="-1" aria-labelledby="videoModalInventariosLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalInventariosLabel">Demo: Inventory Management</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close video"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9" style="border-radius: 0 0 1.5rem 1.5rem; overflow: hidden;">
+                        <iframe src="https://www.youtube.com/embed/I3_6ZAafuQw" title="YouTube video player showing the demonstration of the Inventory Management system" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModalJavasport" tabindex="-1" aria-labelledby="videoModalJavasportLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalJavasportLabel">Demo: JavaSport</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close video"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9" style="border-radius: 0 0 1.5rem 1.5rem; overflow: hidden;">
+                        <iframe src="https://www.youtube.com/embed/L60Dsa6tm64" title="YouTube video player showing the demonstration of the JavaSport e-commerce application" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

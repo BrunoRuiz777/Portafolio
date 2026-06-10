@@ -1,0 +1,346 @@
+/* =========================================
+   1. VARIABLES Y TEMAS
+========================================= */
+
+/* TEMA 1: Oscuro (Teal Profundo - Por defecto) */
+:root {
+    --bg-main: #0b1120; /* Azul marino muy oscuro */
+    --bg-secundario: #111827; 
+    --bg-tarjetas: #172033; /* Tono ligeramente más claro para dar profundidad */
+    
+    --texto-main: #f1f5f9; /* Blanco humo */
+    --texto-muted: #94a3b8;
+    --texto-tarjetas: #f1f5f9;
+    --texto-tarjetas-muted: #94a3b8;
+    
+    --color-primario: #2dd4bf; /* Turquesa / Cian vibrante */
+    --color-primario-dark: #0d9488;
+    --color-primario-glow: #5eead4;
+    --border-color: #1e293b;
+    
+    --texto-boton: #0b1120; /* Texto oscuro para mantener contraste WCAG */
+}
+
+/* TEMA 2: Claro (Azul Corporativo) */
+[data-tema="claro"] {
+    --bg-main: #fdfcfb; /* Blanco cálido */
+    --bg-secundario: #f3f4f6;
+    --bg-tarjetas: #ffffff;
+    
+    --texto-main: #1e293b;
+    --texto-muted: #475569;
+    --texto-tarjetas: #1e293b;
+    --texto-tarjetas-muted: #475569;
+    
+    --color-primario: #3b82f6; /* Azul brillante */
+    --color-primario-dark: #2563eb;
+    --color-primario-glow: #60a5fa;
+    --border-color: #e2e8f0;
+    
+    --texto-boton: #ffffff;
+}
+
+/* TEMA 3: Mezcla (Fondo Claro con Tarjetas Índigo) */
+[data-tema="mezcla"] {
+    --bg-main: #f8fafc; /* Fondo gris muy claro */
+    --bg-secundario: #f1f5f9;
+    --bg-tarjetas: #1e1b4b; /* Índigo profundo */
+    
+    --texto-main: #0f172a;
+    --texto-muted: #475569;
+    --texto-tarjetas: #f8fafc; /* Texto claro dentro de las tarjetas oscuras */
+    --texto-tarjetas-muted: #cbd5e1;
+    
+    --color-primario: #9333ea; /* Morado vibrante */
+    --color-primario-dark: #7e22ce;
+    --color-primario-glow: #c084fc;
+    --border-color: #312e81;
+    
+    --texto-boton: #ffffff;
+}
+
+/* TEMA 4: Invertido (Alto Contraste Carmesí) */
+[data-tema="invertido"] {
+    --bg-main: #09090b; /* Negro suave */
+    --bg-secundario: #18181b;
+    --bg-tarjetas: #18181b;
+    
+    --texto-main: #fafafa;
+    --texto-muted: #a1a1aa;
+    --texto-tarjetas: #fafafa;
+    --texto-tarjetas-muted: #a1a1aa;
+    
+    --color-primario: #e11d48; /* Rojo Carmesí */
+    --color-primario-dark: #be123c;
+    --color-primario-glow: #fb7185;
+    --border-color: #27272a;
+    
+    --texto-boton: #ffffff;
+}
+
+/* =========================================
+   2. ESTILOS GENERALES Y ACCESIBILIDAD
+========================================= */
+
+body {
+    background-color: var(--bg-main);
+    color: var(--texto-main);
+    font-family: 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    padding-top: 70px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--texto-main);
+    transition: color 0.5s ease;
+}
+
+p, li, .lead, address {
+    color: var(--texto-muted);
+    transition: color 0.5s ease;
+}
+
+/* Utilidades de Texto y Fondos */
+.text-purple {
+    color: var(--color-primario) !important;
+    transition: color 0.5s ease;
+}
+.bg-dark-alt {
+    background-color: var(--bg-secundario);
+    transition: background-color 0.5s ease;
+}
+
+/* ACCESIBILIDAD: Anillo de foco visual al usar teclado */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--color-primario-glow) !important;
+    outline-offset: 3px !important;
+    border-radius: 4px;
+}
+
+/* =========================================
+   3. NAVBAR Y NAVEGACIÓN
+========================================= */
+
+.navbar {
+    background-color: var(--bg-main) !important;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+    color: var(--texto-main) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--texto-main) !important;
+    margin: 0 0.2rem;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
+    color: var(--color-primario) !important;
+    opacity: 1;
+}
+
+/* =========================================
+   4. HERO Y TÍTULOS
+========================================= */
+
+.hero-section {
+    min-height: 90vh;
+    padding: 4rem 0;
+    /* Un ligero resplandor radial de fondo */
+    background: radial-gradient(circle at 15% 40%, rgba(45, 212, 191, 0.05), var(--bg-main));
+    transition: background 0.5s ease;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--texto-main), var(--color-primario-glow));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.purple-line {
+    width: 70px;
+    height: 4px;
+    background: var(--color-primario);
+    border-radius: 4px;
+    transition: background-color 0.5s ease;
+}
+
+/* =========================================
+   5. TARJETAS (CARDS) Y PROYECTOS
+========================================= */
+
+.bg-card, .card {
+    background-color: var(--bg-tarjetas) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+}
+
+.bg-card:hover, .card:hover {
+    border-color: var(--color-primario) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
+}
+
+.bg-card h3, .bg-card h4, .bg-card h5, .bg-card h6, .card h3, .card h4 {
+    color: var(--texto-tarjetas) !important;
+}
+
+.bg-card p, .bg-card li, .card p, .card span:not(.badge) {
+    color: var(--texto-tarjetas-muted) !important;
+}
+
+/* =========================================
+   6. BOTONES
+========================================= */
+
+.btn-contacto-nav {
+    border: 2px solid var(--color-primario) !important;
+    color: var(--texto-main) !important;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-contacto-nav:hover, 
+.btn-contacto-nav.active { 
+    background-color: var(--color-primario) !important;
+    color: var(--texto-boton) !important; /* Se adapta dinámicamente al tema */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-purple {
+    background-color: var(--color-primario) !important;
+    border: none !important;
+    color: var(--texto-boton) !important; /* Se adapta dinámicamente al tema */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-purple:hover {
+    background-color: var(--color-primario-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0, 0.3);
+}
+
+.btn-outline-light {
+    border: 2px solid var(--border-color) !important;
+    color: var(--texto-main) !important;
+    background-color: transparent !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--texto-main) !important;
+    color: var(--bg-main) !important;
+    border-color: var(--texto-main) !important;
+}
+
+.text-hover-purple:hover {
+    color: var(--color-primario) !important;
+    transition: color 0.2s ease-in-out;
+}
+
+/* =========================================
+   7. MODALES (VENTANAS FLOTANTES)
+========================================= */
+
+.modal-content {
+    background-color: var(--bg-tarjetas);
+    border: 1px solid var(--border-color);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    transition: background-color 0.5s ease;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.2rem 1.5rem;
+}
+
+.modal-title {
+    font-weight: 700;
+    color: var(--texto-tarjetas);
+}
+
+.modal-body {
+    background-color: var(--bg-secundario);
+    padding: 0;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-tarjetas);
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.modal-footer .btn-secondary {
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--border-color);
+    color: var(--texto-tarjetas);
+}
+
+.modal-footer .btn-secondary:hover {
+    border-color: var(--color-primario);
+}
+
+/* =========================================
+   8. RESPONSIVE (MEDIA QUERIES)
+========================================= */
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        background-color: var(--bg-tarjetas);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .btn-contacto-nav {
+        margin-top: 1rem;
+        text-align: center;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+        min-height: auto;
+        padding: 6rem 0 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-section .justify-content-lg-start {
+        justify-content: center !important;
+    }
+    
+    .elementos {
+        justify-content: center !important;
+    }
+}
